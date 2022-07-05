@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/employee")
+@RequestMapping("/test")
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
@@ -30,7 +30,7 @@ public class EmployeeController {
         return ResponseEntity.ok().body(employeeService.getEmployeeById(id));
     }
 
-    @PostMapping("crearemployee")
+    @PostMapping("apiv1/clientes/add")
     public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee) {
         return ResponseEntity.ok().body(this.employeeService.createEmployee(employee));
     }
