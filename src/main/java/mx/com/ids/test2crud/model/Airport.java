@@ -14,6 +14,10 @@ public class Airport {
     @Column(name = "nombre")
     private String name;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "country_id")
+    private Country country;
+
     public Long getAirportId() {
         return airportId;
     }
@@ -28,5 +32,13 @@ public class Airport {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
     }
 }

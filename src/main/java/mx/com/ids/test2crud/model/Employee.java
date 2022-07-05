@@ -22,7 +22,7 @@ public class Employee {
     @JoinColumn(name = "country_id")
     private Country country;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "spoken_languages",
             joinColumns = @JoinColumn(name = "employee_id"),

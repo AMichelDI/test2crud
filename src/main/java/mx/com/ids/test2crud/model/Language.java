@@ -19,7 +19,7 @@ public class Language {
     @Column(name = "nombre")
     private String name;
 
-    @ManyToMany(mappedBy = "spokenLanguages")
+    @ManyToMany(mappedBy = "spokenLanguages", cascade = CascadeType.ALL)
     private  List<Employee> speaks;
 
     public Long getLanguageId() {

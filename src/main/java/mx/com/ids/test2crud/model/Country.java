@@ -18,11 +18,17 @@ public class Country {
     @Column(name = "nombre")
     private String name;
 
+    /*
     @OneToMany
     @JoinColumn(name = "airport_id")
     private List<Airport> airports;
+     */
 
-    @OneToOne(mappedBy = "country")
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "airport_id")
+    private List<Airport> airports;
+
+    @OneToOne(mappedBy = "country", cascade = CascadeType.ALL)
     private Employee employee;
 
     public Long getCountryId() {
